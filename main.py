@@ -2,7 +2,6 @@ from bardapi import Bard
 import requests, json
 import flask
 from flask import Flask, request, jsonify
-from keep_alive import keep_alive
 
 url = "https://free.churchless.tech/v1/chat/completions"
 messages = []
@@ -77,6 +76,5 @@ def send_message(recipient_id, message_text):
   return response.json()
 
 
-keep_alive()  
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8000)
+    app.run()
